@@ -15,7 +15,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void points_east_when_receiving_turn_right_command_while_pointing_north() {
+    public void turning_right_when_pointing_north() {
         MarsRover marsRover = new MarsRover(new Coordinates(0,0), "N");
         marsRover.receive("r");
 
