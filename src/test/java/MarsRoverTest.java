@@ -14,5 +14,12 @@ public class MarsRoverTest {
         assertThat(marsRover.getDirection(), is("N"));
     }
 
+    @Test
+    public void points_east_when_receiving_turn_right_command_while_pointing_north() {
+        MarsRover marsRover = new MarsRover(new Coordinates(0,0), "N");
+        marsRover.receive("r");
 
+        assertThat(marsRover.getCoordinates(), is(new Coordinates(0,0)));
+        assertThat(marsRover.getDirection(), is("E"));
+    }
 }

@@ -10,7 +10,9 @@ public class MarsRover {
     }
 
     public void receive(String commandsSequence) {
-        
+        if(commandsSequence.equals("r")) {
+            direction = "E";
+        }
     }
 
     public Coordinates getCoordinates() {
