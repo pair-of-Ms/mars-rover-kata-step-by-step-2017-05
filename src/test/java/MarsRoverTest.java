@@ -34,4 +34,14 @@ public class MarsRoverTest {
         assertThat(marsRover.getCoordinates(), is(new Coordinates(0,0)));
         assertThat(marsRover.getDirection(), is("S"));
     }
+
+    @Test
+    public void turns_right_when_pointing_south() {
+        MarsRover marsRover = new MarsRover(new Coordinates(0,0), "S");
+
+        marsRover.receive("r");
+
+        assertThat(marsRover.getCoordinates(), is(new Coordinates(0,0)));
+        assertThat(marsRover.getDirection(), is("W"));
+    }
 }
