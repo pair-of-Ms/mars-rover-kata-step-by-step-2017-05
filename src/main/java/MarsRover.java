@@ -13,8 +13,11 @@ public class MarsRover {
         if(commandsSequence.isEmpty()) {
             return;
         }
-
-        direction = "E";
+        if(direction.equals("N")) {
+            direction = "E";
+        } else {
+            direction = "S";
+        }
     }
 
     public Coordinates getCoordinates() {
