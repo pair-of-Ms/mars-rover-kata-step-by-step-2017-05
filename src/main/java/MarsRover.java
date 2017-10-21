@@ -29,14 +29,6 @@ public class MarsRover {
         }
     }
 
-    public Coordinates getCoordinates() {
-        return coordinates;
-    }
-
-    public String getDirection() {
-        return direction;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
