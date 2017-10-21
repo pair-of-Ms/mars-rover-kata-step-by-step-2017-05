@@ -1,7 +1,8 @@
 public class MarsRover {
 
     private Coordinates coordinates;
-    private String direction;
+    private String directionString;
+    private Direction direction;
 
     public MarsRover(Coordinates coordinates, String direction) {
 
@@ -34,11 +35,12 @@ public class MarsRover {
     }
 
     private String getDirection() {
-        return direction;
+        return directionString;
     }
 
     private void setDirection(String direction) {
-        this.direction = direction;
+        this.directionString = direction;
+        this.direction = Direction.parse(directionString);
     }
 
     @Override
