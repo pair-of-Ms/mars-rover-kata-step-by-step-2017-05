@@ -1,13 +1,11 @@
 public class MarsRover {
 
     private Coordinates coordinates;
-    private String directionString;
     private Direction direction;
 
     public MarsRover(Coordinates coordinates, String direction) {
-
         this.coordinates = coordinates;
-        this.setDirection(direction);
+        this.direction = Direction.parse(direction);
     }
 
     public void receive(String commandsSequence) {
@@ -15,32 +13,27 @@ public class MarsRover {
             return;
         }
         if (commandsSequence.equals("r")) {
-            switch (getDirection()) {
-                case "N":
-                    setDirection("E");
-                    break;
-                case "E":
-                    setDirection("S");
-                    break;
-                case "S":
-                    setDirection("W");
-                    break;
-                default:
-                    setDirection("N");
-                    break;
+            if (getDirection().equals(Direction.North)) {
+                setDirection(Direction.East);
+            } else if (getDirection().equals(Direction.East)) {
+                setDirection(Direction.South);
+            } else if (getDirection().equals(Direction.South)) {
+                setDirection(Direction.West);
+            } else {
+                setDirection(Direction.North);
+
             }
         } else {
-            setDirection("W");
+            setDirection(Direction.West);
         }
     }
 
-    private String getDirection() {
-        return directionString;
+    private Direction getDirection() {
+        return direction;
     }
 
-    private void setDirection(String direction) {
-        this.directionString = direction;
-        this.direction = Direction.parse(directionString);
+    public void setDirection(Direction direction) {
+        this.direction = direction;
     }
 
     @Override
