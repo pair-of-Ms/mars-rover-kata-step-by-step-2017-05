@@ -52,14 +52,14 @@ public class MarsRover {
 
         if (coordinates != null ? !coordinates.equals(marsRover.coordinates) : marsRover.coordinates != null)
             return false;
-        return getDirection() != null ? getDirection().equals(marsRover.getDirection()) : marsRover.getDirection() == null;
+        return direction == marsRover.direction;
 
     }
 
     @Override
     public int hashCode() {
         int result = coordinates != null ? coordinates.hashCode() : 0;
-        result = 31 * result + (getDirection() != null ? getDirection().hashCode() : 0);
+        result = 31 * result + (direction != null ? direction.hashCode() : 0);
         return result;
     }
 }
