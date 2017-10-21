@@ -9,31 +9,14 @@ public class MarsRover {
     }
 
     public void receive(String commandsSequence) {
-        if(commandsSequence.isEmpty()) {
+        if (commandsSequence.isEmpty()) {
             return;
         }
         if (commandsSequence.equals("r")) {
-            if (getDirection().equals(Direction.North)) {
-                setDirection(Direction.East);
-            } else if (getDirection().equals(Direction.East)) {
-                setDirection(Direction.South);
-            } else if (getDirection().equals(Direction.South)) {
-                setDirection(Direction.West);
-            } else {
-                setDirection(Direction.North);
-
-            }
+            this.direction = direction.turnRight();
         } else {
-            setDirection(Direction.West);
+            this.direction = Direction.West;
         }
-    }
-
-    private Direction getDirection() {
-        return direction;
-    }
-
-    public void setDirection(Direction direction) {
-        this.direction = direction;
     }
 
     @Override
