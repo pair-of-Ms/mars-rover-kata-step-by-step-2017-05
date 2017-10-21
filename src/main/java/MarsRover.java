@@ -13,19 +13,23 @@ public class MarsRover {
         if(commandsSequence.isEmpty()) {
             return;
         }
-        switch (direction) {
-            case "N":
-                direction = "E";
-                break;
-            case "E":
-                direction = "S";
-                break;
-            case "S":
-                direction = "W";
-                break;
-            default:
-                direction = "N";
-                break;
+        if (commandsSequence.equals("r")) {
+            switch (direction) {
+                case "N":
+                    direction = "E";
+                    break;
+                case "E":
+                    direction = "S";
+                    break;
+                case "S":
+                    direction = "W";
+                    break;
+                default:
+                    direction = "N";
+                    break;
+            }
+        } else {
+            direction = "W";
         }
     }
 
