@@ -36,4 +36,24 @@ public class MarsRover {
     public String getDirection() {
         return direction;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MarsRover)) return false;
+
+        MarsRover marsRover = (MarsRover) o;
+
+        if (coordinates != null ? !coordinates.equals(marsRover.coordinates) : marsRover.coordinates != null)
+            return false;
+        return direction != null ? direction.equals(marsRover.direction) : marsRover.direction == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = coordinates != null ? coordinates.hashCode() : 0;
+        result = 31 * result + (direction != null ? direction.hashCode() : 0);
+        return result;
+    }
 }

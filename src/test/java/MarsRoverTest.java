@@ -11,8 +11,7 @@ public class MarsRoverTest {
 
         marsRover.receive("");
 
-        assertThat(marsRover.getCoordinates(), is(new Coordinates(0,0)));
-        assertThat(marsRover.getDirection(), is("N"));
+        assertThat(marsRover, is(new MarsRover(new Coordinates(0,0), "N")));
     }
 
     @Test
@@ -21,8 +20,7 @@ public class MarsRoverTest {
 
         marsRover.receive("r");
 
-        assertThat(marsRover.getCoordinates(), is(new Coordinates(0,0)));
-        assertThat(marsRover.getDirection(), is("E"));
+        assertThat(marsRover, is(new MarsRover(new Coordinates(0,0), "E")));
     }
 
     @Test
@@ -31,8 +29,7 @@ public class MarsRoverTest {
 
         marsRover.receive("r");
 
-        assertThat(marsRover.getCoordinates(), is(new Coordinates(0,0)));
-        assertThat(marsRover.getDirection(), is("S"));
+        assertThat(marsRover, is(new MarsRover(new Coordinates(0,0), "S")));
     }
 
     @Test
@@ -41,8 +38,7 @@ public class MarsRoverTest {
 
         marsRover.receive("r");
 
-        assertThat(marsRover.getCoordinates(), is(new Coordinates(0,0)));
-        assertThat(marsRover.getDirection(), is("W"));
+        assertThat(marsRover, is(new MarsRover(new Coordinates(0,0), "W")));
     }
 
     @Test
@@ -51,7 +47,6 @@ public class MarsRoverTest {
 
         marsRover.receive("r");
 
-        assertThat(marsRover.getCoordinates(), is(new Coordinates(0,0)));
-        assertThat(marsRover.getDirection(), is("N"));
+        assertThat(marsRover, is(new MarsRover(new Coordinates(0,0), "N")));
     }
 }
