@@ -22,6 +22,10 @@ public enum Direction {
         public Direction turnRight() {
             return North;
         }
+
+        public Direction turnLeft() {
+            return South;
+        }
     };
 
     static public Direction parse(String directionAsString) {
@@ -39,6 +43,6 @@ public enum Direction {
     abstract public Direction turnRight();
 
     Direction turnLeft() {
-        return South;
+        return East;
     }
 }
