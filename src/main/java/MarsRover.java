@@ -15,7 +15,7 @@ public class MarsRover {
         if (commandsSequence.equals("r")) {
             this.direction = direction.turnRight();
         } else {
-            this.direction = Direction.West;
+            this.direction = direction.turnLeft();
         }
     }
 

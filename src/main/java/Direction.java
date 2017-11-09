@@ -33,4 +33,8 @@ public enum Direction {
     }
 
     abstract public Direction turnRight();
+
+    Direction turnLeft() {
+        return West;
+    }
 }
