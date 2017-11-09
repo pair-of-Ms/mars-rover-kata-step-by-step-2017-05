@@ -85,4 +85,13 @@ public class MarsRoverTest {
 
         assertThat(marsRover, is(new MarsRover(new Coordinates(0,0), "N")));
     }
+
+    @Test
+    public void moves_forward_when_pointing_north() {
+        MarsRover marsRover = new MarsRover(new Coordinates(5,4), "N");
+
+        marsRover.receive("f");
+
+        assertThat(marsRover, is(new MarsRover(new Coordinates(5,5), "N")));
+    }
 }
