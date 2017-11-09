@@ -38,4 +38,12 @@ public class MarsRover {
         result = 31 * result + (direction != null ? direction.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "MarsRover{" +
+            "coordinates=" + coordinates +
+            ", direction=" + direction +
+            '}';
+    }
 }

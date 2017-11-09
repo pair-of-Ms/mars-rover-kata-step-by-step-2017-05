@@ -58,4 +58,13 @@ public class MarsRoverTest {
 
         assertThat(marsRover, is(new MarsRover(new Coordinates(0,0), "W")));
     }
+
+    @Test
+    public void turns_left_when_pointing_west() {
+        MarsRover marsRover = new MarsRover(new Coordinates(0,0), "W");
+
+        marsRover.receive("l");
+
+        assertThat(marsRover, is(new MarsRover(new Coordinates(0,0), "S")));
+    }
 }
