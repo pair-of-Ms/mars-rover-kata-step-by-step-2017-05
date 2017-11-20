@@ -17,8 +17,10 @@ public class MarsRover {
             direction = direction.turnRight();
         } else if(commandsSequence.equals("l")){
             direction = direction.turnLeft();
-        } else {
+        } else if(commandsSequence.equals("f")){
             coordinates = direction.moveForward(coordinates, MOVEMENT_DELTA);
+        } else {
+            coordinates = new Coordinates(5,3);
         }
     }
 
