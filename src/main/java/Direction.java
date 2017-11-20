@@ -69,4 +69,8 @@ public enum Direction {
     abstract public Direction turnLeft();
 
     abstract public Coordinates moveForward(Coordinates coordinates, int delta);
+
+    public Coordinates moveBackwards(Coordinates coordinates, int delta) {
+        return coordinates.incrementY(- delta);
+    }
 }

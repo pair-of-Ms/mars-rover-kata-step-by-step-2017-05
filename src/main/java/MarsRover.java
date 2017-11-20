@@ -20,7 +20,7 @@ public class MarsRover {
         } else if(commandsSequence.equals("f")){
             coordinates = direction.moveForward(coordinates, MOVEMENT_DELTA);
         } else {
-            coordinates = new Coordinates(5,3);
+            coordinates = direction.moveBackwards(coordinates, MOVEMENT_DELTA);
         }
     }
 
