@@ -18,15 +18,15 @@ public class MarsRover {
         } else if(commandsSequence.equals("l")){
             this.direction = direction.turnLeft();
         } else {
-            moveForward();
+            moveForward(MOVEMENT_DELTA);
         }
     }
 
-    private void moveForward() {
+    private void moveForward(int delta) {
         if (this.direction == Direction.North) {
-            this.coordinates = this.coordinates.incrementY(MOVEMENT_DELTA);
+            this.coordinates = this.coordinates.incrementY(delta);
         } else {
-            this.coordinates = this.coordinates.incrementX(MOVEMENT_DELTA);
+            this.coordinates = this.coordinates.incrementX(delta);
         }
     }
 
