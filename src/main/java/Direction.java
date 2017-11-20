@@ -8,7 +8,7 @@ public enum Direction {
             return West;
         }
 
-        public Coordinates moveForward(Coordinates coordinates, int delta)  {
+        public Coordinates moveForward(Coordinates coordinates, int delta) {
             return coordinates.incrementY(delta);
         }
     },
@@ -21,7 +21,7 @@ public enum Direction {
             return East;
         }
 
-        public Coordinates moveForward(Coordinates coordinates, int delta)  {
+        public Coordinates moveForward(Coordinates coordinates, int delta) {
             return coordinates.incrementY(-delta);
         }
     },
@@ -34,8 +34,12 @@ public enum Direction {
             return North;
         }
 
-        public Coordinates moveForward(Coordinates coordinates, int delta)  {
+        public Coordinates moveForward(Coordinates coordinates, int delta) {
             return coordinates.incrementX(delta);
+        }
+
+        public Coordinates moveBackwards(Coordinates coordinates, int delta) {
+            return coordinates.incrementX(-delta);
         }
     },
     West {
@@ -47,7 +51,7 @@ public enum Direction {
             return South;
         }
 
-        public Coordinates moveForward(Coordinates coordinates, int delta)  {
+        public Coordinates moveForward(Coordinates coordinates, int delta) {
             return coordinates.incrementX(-delta);
         }
     };
@@ -71,6 +75,6 @@ public enum Direction {
     abstract public Coordinates moveForward(Coordinates coordinates, int delta);
 
     public Coordinates moveBackwards(Coordinates coordinates, int delta) {
-        return coordinates.incrementY(- delta);
+        return coordinates.incrementY(-delta);
     }
 }
