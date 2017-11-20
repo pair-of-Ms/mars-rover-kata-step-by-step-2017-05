@@ -8,6 +8,10 @@ public class Coordinates {
         this.y = y;
     }
 
+    public Coordinates incrementX(int delta) {
+        return new Coordinates(x + delta, y);
+    }
+
     @Override
     public String toString() {
         return "Coordinates{" +
