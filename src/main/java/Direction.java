@@ -29,6 +29,10 @@ public enum Direction {
         public Direction turnLeft() {
             return North;
         }
+
+        public Coordinates moveForward(Coordinates coordinates, int delta)  {
+            return coordinates.incrementX(delta);
+        }
     },
     West {
         public Direction turnRight() {
@@ -60,7 +64,7 @@ public enum Direction {
         if (this == Direction.North) {
             throw new RuntimeException("Shouldnt be here");
         } else if(this == Direction.East){
-            return coordinates.incrementX(delta);
+            throw new RuntimeException("Shouldnt be here");
         } else if(this == Direction.South){
             return coordinates.incrementY(-delta);
         } else {
