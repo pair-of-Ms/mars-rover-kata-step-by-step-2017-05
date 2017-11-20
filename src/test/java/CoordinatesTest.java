@@ -13,5 +13,13 @@ public class CoordinatesTest {
         assertThat(coordinates.incrementX(-2), is(new Coordinates(-1, 1)));
     }
 
+    @Test
+    public void increments_y() {
+        Coordinates coordinates = new Coordinates(1,1);
+
+        assertThat(coordinates.incrementY(1), is(new Coordinates(1, 2)));
+        assertThat(coordinates.incrementY(-2), is(new Coordinates(1, -1)));
+    }
+
 
 }

@@ -12,6 +12,10 @@ public class Coordinates {
         return new Coordinates(x + delta, y);
     }
 
+    public Coordinates incrementY(int delta) {
+        return new Coordinates(x, y + delta);
+    }
+
     @Override
     public String toString() {
         return "Coordinates{" +
