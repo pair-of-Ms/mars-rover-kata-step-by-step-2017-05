@@ -57,8 +57,11 @@ public enum Direction {
             return coordinates.incrementY(delta);
         } else if(this == Direction.East){
             return coordinates.incrementX(delta);
-        } else {
+        } else if(this == Direction.South){
             return coordinates.incrementY(-delta);
+        } else {
+            return coordinates.incrementX(-delta);
         }
+
     }
 }

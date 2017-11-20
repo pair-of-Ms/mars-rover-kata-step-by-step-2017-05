@@ -112,4 +112,13 @@ public class MarsRoverTest {
 
         assertThat(marsRover, is(new MarsRover(new Coordinates(5,3), "S")));
     }
+
+    @Test
+    public void moves_forward_when_pointing_west() {
+        MarsRover marsRover = new MarsRover(new Coordinates(5,4), "W");
+
+        marsRover.receive("f");
+
+        assertThat(marsRover, is(new MarsRover(new Coordinates(4,4), "W")));
+    }
 }
