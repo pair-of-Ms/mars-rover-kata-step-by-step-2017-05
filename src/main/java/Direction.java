@@ -20,6 +20,10 @@ public enum Direction {
         public Direction turnLeft() {
             return East;
         }
+
+        public Coordinates moveForward(Coordinates coordinates, int delta)  {
+            return coordinates.incrementY(-delta);
+        }
     },
     East {
         public Direction turnRight() {
@@ -42,6 +46,10 @@ public enum Direction {
         public Direction turnLeft() {
             return South;
         }
+
+        public Coordinates moveForward(Coordinates coordinates, int delta)  {
+            return coordinates.incrementX(-delta);
+        }
     };
 
     static public Direction parse(String directionAsString) {
@@ -60,16 +68,5 @@ public enum Direction {
 
     abstract public Direction turnLeft();
 
-    public Coordinates moveForward(Coordinates coordinates, int delta) {
-        if (this == Direction.North) {
-            throw new RuntimeException("Shouldnt be here");
-        } else if(this == Direction.East){
-            throw new RuntimeException("Shouldnt be here");
-        } else if(this == Direction.South){
-            return coordinates.incrementY(-delta);
-        } else {
-            return coordinates.incrementX(-delta);
-        }
-
-    }
+    abstract public Coordinates moveForward(Coordinates coordinates, int delta);
 }
