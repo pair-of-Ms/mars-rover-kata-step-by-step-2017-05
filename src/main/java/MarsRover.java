@@ -18,9 +18,9 @@ public class MarsRover {
             this.direction = direction.turnLeft();
         } else {
             if (this.direction == Direction.North) {
-                this.coordinates = new Coordinates(5, 5);
+                this.coordinates = this.coordinates.incrementY(1);
             } else {
-                this.coordinates = new Coordinates(6, 4);
+                this.coordinates = this.coordinates.incrementX(1);
             }
         }
     }
