@@ -55,8 +55,10 @@ public enum Direction {
     public Coordinates moveForward(Coordinates coordinates, int delta) {
         if (this == Direction.North) {
             return coordinates.incrementY(delta);
-        } else {
+        } else if(this == Direction.East){
             return coordinates.incrementX(delta);
+        } else {
+            return coordinates.incrementY(-delta);
         }
     }
 }
