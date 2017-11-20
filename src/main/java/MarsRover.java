@@ -1,5 +1,6 @@
 public class MarsRover {
 
+    private static final int MOVEMENT_DELTA = 1;
     private Coordinates coordinates;
     private Direction direction;
 
@@ -23,9 +24,9 @@ public class MarsRover {
 
     private void moveForward() {
         if (this.direction == Direction.North) {
-            this.coordinates = this.coordinates.incrementY(1);
+            this.coordinates = this.coordinates.incrementY(MOVEMENT_DELTA);
         } else {
-            this.coordinates = this.coordinates.incrementX(1);
+            this.coordinates = this.coordinates.incrementX(MOVEMENT_DELTA);
         }
     }
 
