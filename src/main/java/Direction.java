@@ -51,4 +51,12 @@ public enum Direction {
     abstract public Direction turnRight();
 
     abstract public Direction turnLeft();
+
+    public Coordinates moveForward(Coordinates coordinates, int delta) {
+        if (this == Direction.North) {
+            return coordinates.incrementY(delta);
+        } else {
+            return coordinates.incrementX(delta);
+        }
+    }
 }

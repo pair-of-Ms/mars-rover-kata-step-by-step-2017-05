@@ -14,19 +14,11 @@ public class MarsRover {
             return;
         }
         if (commandsSequence.equals("r")) {
-            this.direction = direction.turnRight();
+            direction = direction.turnRight();
         } else if(commandsSequence.equals("l")){
-            this.direction = direction.turnLeft();
+            direction = direction.turnLeft();
         } else {
-            moveForward(MOVEMENT_DELTA);
-        }
-    }
-
-    private void moveForward(int delta) {
-        if (this.direction == Direction.North) {
-            this.coordinates = this.coordinates.incrementY(delta);
-        } else {
-            this.coordinates = this.coordinates.incrementX(delta);
+            coordinates = direction.moveForward(coordinates, MOVEMENT_DELTA);
         }
     }
 
