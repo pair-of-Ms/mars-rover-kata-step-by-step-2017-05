@@ -5,21 +5,21 @@ public class MarsRover {
     private Direction direction;
 
     public MarsRover(Coordinates coordinates, String direction) {
-        this.coordinates = coordinates;
-        this.direction = Direction.parse(direction);
+        this.setCoordinates(coordinates);
+        this.setDirection(Direction.parse(direction));
     }
 
     public void receive(String commandsSequence) {
         for(String command:commandsSequence.split(""))
         {
             if (command.equals("r")) {
-                direction = direction.turnRight();
+                setDirection(getDirection().turnRight());
             } else if (command.equals("l")) {
-                direction = direction.turnLeft();
+                setDirection(getDirection().turnLeft());
             } else if (command.equals("f")) {
-                coordinates = direction.moveForward(coordinates, MOVEMENT_DELTA);
+                setCoordinates(getDirection().moveForward(getCoordinates(), MOVEMENT_DELTA));
             } else if (command.equals("b")){
-                coordinates = direction.moveBackwards(coordinates, MOVEMENT_DELTA);
+                setCoordinates(getDirection().moveBackwards(getCoordinates(), MOVEMENT_DELTA));
             }
         }
     }
@@ -31,24 +31,40 @@ public class MarsRover {
 
         MarsRover marsRover = (MarsRover) o;
 
-        if (coordinates != null ? !coordinates.equals(marsRover.coordinates) : marsRover.coordinates != null)
+        if (getCoordinates() != null ? !getCoordinates().equals(marsRover.getCoordinates()) : marsRover.getCoordinates() != null)
             return false;
-        return direction == marsRover.direction;
+        return getDirection() == marsRover.getDirection();
 
     }
 
     @Override
     public int hashCode() {
-        int result = coordinates != null ? coordinates.hashCode() : 0;
-        result = 31 * result + (direction != null ? direction.hashCode() : 0);
+        int result = getCoordinates() != null ? getCoordinates().hashCode() : 0;
+        result = 31 * result + (getDirection() != null ? getDirection().hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "MarsRover{" +
-            "coordinates=" + coordinates +
-            ", direction=" + direction +
+            "coordinates=" + getCoordinates() +
+            ", direction=" + getDirection() +
             '}';
+    }
+
+    private Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    private void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    private Direction getDirection() {
+        return direction;
+    }
+
+    private void setDirection(Direction direction) {
+        this.direction = direction;
     }
 }
