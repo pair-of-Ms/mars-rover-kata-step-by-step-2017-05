@@ -27,7 +27,7 @@ public class MarsRover {
             direction = direction.turnLeft();
         } else if (command.equals("f")) {
             coordinates = direction.moveForward(coordinates, MOVEMENT_DELTA);
-        } else {
+        } else if (command.equals("b")){
             coordinates = direction.moveBackwards(coordinates, MOVEMENT_DELTA);
         }
     }

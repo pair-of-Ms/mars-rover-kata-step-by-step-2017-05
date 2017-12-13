@@ -166,4 +166,13 @@ public class MarsRoverTest {
 
         assertThat(marsRover, is(new MarsRover(new Coordinates(8, 4), "S")));
     }
+
+    @Test
+    public void ignores_unknown_commands() {
+        MarsRover marsRover = new MarsRover(new Coordinates(7, 4), "E");
+
+        marsRover.receive("*");
+
+        assertThat(marsRover, is(new MarsRover(new Coordinates(7, 4), "E")));
+    }
 }
