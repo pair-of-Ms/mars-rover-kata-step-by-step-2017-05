@@ -1,4 +1,4 @@
-public class MovingForward {
+public class MovingForward implements Command {
     private int delta;
 
     public MovingForward(int delta) {

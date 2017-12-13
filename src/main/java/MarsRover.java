@@ -11,19 +11,38 @@ public class MarsRover {
     }
 
     public void receive(String commandsSequence) {
+        execute(createCommands(commandsSequence));
+    }
 
+    private void execute(List<Command> commands) {
+        for(Command command:commands) {
+            vector = command.execute(vector);
+        }
+    }
+
+    private List<Command> createCommands(String commandsSequence) {
+        List<Command> commands = new ArrayList<>();
         for(String commandRepresentation:commandsSequence.split(""))
         {
-            if (commandRepresentation.equals("r")) {
-                vector = new TurningRight().execute(vector);
-            } else if (commandRepresentation.equals("l")) {
-                vector = new TurningLeft().execute(vector);
-            } else if (commandRepresentation.equals("f")) {
-                vector = new MovingForward(MOVEMENT_DELTA).execute(vector);
-            } else if (commandRepresentation.equals("b")){
-                vector = new MovingBackwards(MOVEMENT_DELTA).execute(vector);
-            }
+            commands.add(createCommand(commandRepresentation));
         }
+        return commands;
+    }
+
+    private Command createCommand(String commandRepresentation) {
+        Command command;
+        if (commandRepresentation.equals("r")) {
+            command = new TurningRight();
+        } else if (commandRepresentation.equals("l")) {
+            command = new TurningLeft();
+        } else if (commandRepresentation.equals("f")) {
+            command = new MovingForward(MOVEMENT_DELTA);
+        } else if (commandRepresentation.equals("b")){
+            command = new MovingBackwards(MOVEMENT_DELTA);
+        } else {
+            command = new UnknownCommand();
+        }
+        return command;
     }
 
     @Override
