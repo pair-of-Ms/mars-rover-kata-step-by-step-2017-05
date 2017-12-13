@@ -157,4 +157,13 @@ public class MarsRoverTest {
 
         assertThat(marsRover, is(new MarsRover(new Coordinates(6,4), "W")));
     }
+
+    @Test
+    public void receives_multiple_commands() {
+        MarsRover marsRover = new MarsRover(new Coordinates(7, 4), "E");
+
+        marsRover.receive("fr");
+
+        assertThat(marsRover, is(new MarsRover(new Coordinates(8, 4), "S")));
+    }
 }
