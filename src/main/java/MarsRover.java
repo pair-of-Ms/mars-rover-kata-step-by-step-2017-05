@@ -10,10 +10,6 @@ public class MarsRover {
     }
 
     public void receive(String commandsSequence) {
-        if (commandsSequence.isEmpty()) {
-            return;
-        }
-
         for(String command:commandsSequence.split(""))
         {
             executeCommand(command);
