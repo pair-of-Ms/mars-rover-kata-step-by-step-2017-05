@@ -16,15 +16,19 @@ public class MarsRover {
 
         for(String command:commandsSequence.split(""))
         {
-            if (command.equals("r")) {
-                direction = direction.turnRight();
-            } else if (command.equals("l")) {
-                direction = direction.turnLeft();
-            } else if (command.equals("f")) {
-                coordinates = direction.moveForward(coordinates, MOVEMENT_DELTA);
-            } else {
-                coordinates = direction.moveBackwards(coordinates, MOVEMENT_DELTA);
-            }
+            executeCommand(command);
+        }
+    }
+
+    private void executeCommand(String command) {
+        if (command.equals("r")) {
+            direction = direction.turnRight();
+        } else if (command.equals("l")) {
+            direction = direction.turnLeft();
+        } else if (command.equals("f")) {
+            coordinates = direction.moveForward(coordinates, MOVEMENT_DELTA);
+        } else {
+            coordinates = direction.moveBackwards(coordinates, MOVEMENT_DELTA);
         }
     }
 
