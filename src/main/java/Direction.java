@@ -11,6 +11,10 @@ public enum Direction {
         public Coordinates moveForward(Coordinates coordinates, int delta) {
             return coordinates.incrementY(delta);
         }
+
+        public Coordinates moveBackwards(Coordinates coordinates, int delta) {
+            return coordinates.incrementY(-delta);
+        }
     },
     South {
         public Direction turnRight() {
@@ -82,7 +86,5 @@ public enum Direction {
 
     abstract public Coordinates moveForward(Coordinates coordinates, int delta);
 
-    public Coordinates moveBackwards(Coordinates coordinates, int delta) {
-        return coordinates.incrementY(-delta);
-    }
+    abstract public Coordinates moveBackwards(Coordinates coordinates, int delta);
 }
