@@ -58,6 +58,10 @@ public enum Direction {
         public Coordinates moveForward(Coordinates coordinates, int delta) {
             return coordinates.incrementX(-delta);
         }
+
+        public Coordinates moveBackwards(Coordinates coordinates, int delta) {
+            return coordinates.incrementX(delta);
+        }
     };
 
     static public Direction parse(String directionAsString) {
