@@ -30,19 +30,18 @@ public class MarsRover {
     }
 
     private Command createCommand(String commandRepresentation) {
-        Command command;
+
         if (commandRepresentation.equals("r")) {
-            command = new TurningRight();
+            return new TurningRight();
         } else if (commandRepresentation.equals("l")) {
-            command = new TurningLeft();
+            return new TurningLeft();
         } else if (commandRepresentation.equals("f")) {
-            command = new MovingForward(MOVEMENT_DELTA);
+            return new MovingForward(MOVEMENT_DELTA);
         } else if (commandRepresentation.equals("b")){
-            command = new MovingBackwards(MOVEMENT_DELTA);
+            return new MovingBackwards(MOVEMENT_DELTA);
         } else {
-            command = new UnknownCommand();
+            return new UnknownCommand();
         }
-        return command;
     }
 
     @Override
