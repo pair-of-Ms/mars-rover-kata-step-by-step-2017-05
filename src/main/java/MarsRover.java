@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class MarsRover {
 
     private static final int MOVEMENT_DELTA = 1;
@@ -8,16 +11,17 @@ public class MarsRover {
     }
 
     public void receive(String commandsSequence) {
-        for(String command:commandsSequence.split(""))
+
+        for(String commandRepresentation:commandsSequence.split(""))
         {
-            if (command.equals("r")) {
-                vector = vector.turnRight();
-            } else if (command.equals("l")) {
-                vector = vector.turnLeft();
-            } else if (command.equals("f")) {
-                vector = vector.moveForward(MOVEMENT_DELTA);
-            } else if (command.equals("b")){
-                vector = vector.moveBackwards(MOVEMENT_DELTA);
+            if (commandRepresentation.equals("r")) {
+                vector = new TurningRight().execute(vector);
+            } else if (commandRepresentation.equals("l")) {
+                vector = new TurningLeft().execute(vector);
+            } else if (commandRepresentation.equals("f")) {
+                vector = new MovingForward(MOVEMENT_DELTA).execute(vector);
+            } else if (commandRepresentation.equals("b")){
+                vector = new MovingBackwards(MOVEMENT_DELTA).execute(vector);
             }
         }
     }
