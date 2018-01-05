@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class NASACommandCodeInterpreter {
+public class NASAMessageInterpreter {
 
     private static final int MOVEMENT_DELTA = 1;
 

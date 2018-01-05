@@ -2,10 +2,12 @@ import java.util.List;
 
 public class MarsRover {
 
+    private final NASAMessageInterpreter messageInterpeter;
     private Vector vector;
 
     public MarsRover(Coordinates coordinates, String direction) {
         this.vector = new Vector(coordinates, Direction.parse(direction));
+        messageInterpeter = new NASAMessageInterpreter();
     }
 
     public void receive(String message) {
@@ -19,7 +21,7 @@ public class MarsRover {
     }
 
     private List<Command> createCommands(String message) {
-        return new NASACommandCodeInterpreter().createCommands(message);
+        return messageInterpeter.createCommands(message);
     }
 
     @Override
