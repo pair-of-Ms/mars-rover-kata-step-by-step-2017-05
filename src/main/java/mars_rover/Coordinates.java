@@ -1,3 +1,5 @@
+package mars_rover;
+
 public class Coordinates {
 
     private final int x;
@@ -18,7 +20,7 @@ public class Coordinates {
 
     @Override
     public String toString() {
-        return "Coordinates{" +
+        return "mars_rover.Coordinates{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';

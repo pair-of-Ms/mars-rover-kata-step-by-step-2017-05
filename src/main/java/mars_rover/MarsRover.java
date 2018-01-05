@@ -1,3 +1,5 @@
+package mars_rover;
+
 import java.util.List;
 
 public class MarsRover {
@@ -41,7 +43,7 @@ public class MarsRover {
 
     @Override
     public String toString() {
-        return "MarsRover{" +
+        return "mars_rover.MarsRover{" +
                 "vector=" + vector +
                 '}';
     }

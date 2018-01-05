@@ -1,3 +1,5 @@
+package mars_rover;
+
 public class MovingForward implements Command {
     private int delta;
 

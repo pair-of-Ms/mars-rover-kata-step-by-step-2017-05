@@ -1,3 +1,5 @@
+package mars_rover;
+
 public class UnknownCommand implements Command {
     @Override
     public Vector execute(Vector vector) {

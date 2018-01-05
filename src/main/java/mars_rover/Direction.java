@@ -1,3 +1,5 @@
+package mars_rover;
+
 public enum Direction {
     North {
         public Direction turnRight() {

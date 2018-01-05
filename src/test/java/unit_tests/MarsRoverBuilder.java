@@ -1,3 +1,8 @@
+package unit_tests;
+
+import mars_rover.Coordinates;
+import mars_rover.MarsRover;
+
 public class MarsRoverBuilder {
 
     private Coordinates coordinates;
