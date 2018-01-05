@@ -10,8 +10,8 @@ public class MarsRover {
         this.vector = new Vector(coordinates, Direction.parse(direction));
     }
 
-    public void receive(String commandsSequence) {
-        execute(createCommands(commandsSequence));
+    public void receive(String message) {
+        execute(createCommands(message));
     }
 
     private void execute(List<Command> commands) {
@@ -20,9 +20,9 @@ public class MarsRover {
         }
     }
 
-    private List<Command> createCommands(String commandsSequence) {
+    private List<Command> createCommands(String message) {
         List<Command> commands = new ArrayList<>();
-        for(String commandRepresentation:commandsSequence.split(""))
+        for(String commandRepresentation:message.split(""))
         {
             commands.add(createCommand(commandRepresentation));
         }
