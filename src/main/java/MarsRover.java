@@ -22,11 +22,15 @@ public class MarsRover {
 
     private List<Command> createCommands(String message) {
         List<Command> commands = new ArrayList<>();
-        for(String commandRepresentation:message.split(""))
+        for(String commandRepresentation: parseMessage(message))
         {
             commands.add(createCommand(commandRepresentation));
         }
         return commands;
+    }
+
+    private String[] parseMessage(String message) {
+        return message.split("");
     }
 
     private Command createCommand(String commandRepresentation) {
