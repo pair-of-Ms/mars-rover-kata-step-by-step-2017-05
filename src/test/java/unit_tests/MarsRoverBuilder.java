@@ -2,20 +2,28 @@ package unit_tests;
 
 import mars_rover.Coordinates;
 import mars_rover.MarsRover;
+import mars_rover.MessageInterpreter;
+import mars_rover.NASAMessageInterpreter;
 
 public class MarsRoverBuilder {
 
     private Coordinates coordinates;
     private String direction;
+    private MessageInterpreter interpreter;
 
     public static MarsRoverBuilder aMarsRover()
     {
         return new MarsRoverBuilder();
     }
 
-    public static MarsRoverBuilder aMarsRoverAtIrrelevantPosition()
+    public static MarsRoverBuilder aMarsRoverUnderstandingNasaCommandsAtIrrelevantPosition()
     {
-        return aMarsRover().at(30,80);
+        return aMarsRover().understandingNasaCommands().at(30,80);
+    }
+
+    public static MarsRoverBuilder aMarsRoverUnderstandingNasaCommands()
+    {
+        return aMarsRover().understandingNasaCommands();
     }
 
     public MarsRoverBuilder at(int x, int y)
@@ -30,8 +38,13 @@ public class MarsRoverBuilder {
         return this;
     }
 
+    public MarsRoverBuilder understandingNasaCommands() {
+        this.interpreter = new NASAMessageInterpreter();
+        return this;
+    }
+
     public MarsRover build()
     {
-        return new MarsRover(coordinates, direction);
+        return new MarsRover(coordinates, direction, interpreter);
     }
 }

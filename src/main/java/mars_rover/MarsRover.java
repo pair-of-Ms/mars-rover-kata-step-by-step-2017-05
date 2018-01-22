@@ -4,12 +4,16 @@ import java.util.List;
 
 public class MarsRover {
 
-    private final NASAMessageInterpreter messageInterpeter;
+    private final MessageInterpreter messageInterpeter;
     private Vector vector;
 
     public MarsRover(Coordinates coordinates, String direction) {
+        this(coordinates, direction, new NASAMessageInterpreter());
+    }
+
+    public MarsRover(Coordinates coordinates, String direction, MessageInterpreter interpreter) {
         this.vector = new Vector(coordinates, Direction.parse(direction));
-        messageInterpeter = new NASAMessageInterpreter();
+        messageInterpeter = interpreter;
     }
 
     public void receive(String message) {
