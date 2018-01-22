@@ -20,12 +20,11 @@ public class ReceivingMultipleCommandsTest {
     }
 
     @Test
-    @Ignore
     public void receives_multiple_ESA_commands() {
-        MarsRover marsRover = aMarsRover().at(7,4).pointing("E").build();
+        MarsRover marsRover = aMarsRover().understandingEsaCommands().at(7,4).pointing("E").build();
 
         marsRover.receive("addrri");
 
-        assertThat(marsRover, is(aMarsRover().at(10,4).pointing("S").build()));
+        assertThat(marsRover, is(aMarsRover().understandingEsaCommands().at(10,4).pointing("S").build()));
     }
 }

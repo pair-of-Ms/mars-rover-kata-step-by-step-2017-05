@@ -1,9 +1,6 @@
 package unit_tests;
 
-import mars_rover.Coordinates;
-import mars_rover.MarsRover;
-import mars_rover.MessageInterpreter;
-import mars_rover.NASAMessageInterpreter;
+import mars_rover.*;
 
 public class MarsRoverBuilder {
 
@@ -40,6 +37,11 @@ public class MarsRoverBuilder {
 
     public MarsRoverBuilder understandingNasaCommands() {
         this.interpreter = new NASAMessageInterpreter();
+        return this;
+    }
+
+    public MarsRoverBuilder understandingEsaCommands() {
+        this.interpreter = new ESAMessageInterpreter();
         return this;
     }
 
