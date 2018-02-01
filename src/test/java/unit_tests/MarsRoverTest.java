@@ -164,15 +164,6 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void receives_multiple_commands() {
-        MarsRover marsRover = aMarsRoverUnderstandingNasaCommands().at(7,4).pointing("E").build();
-
-        marsRover.receive("fr");
-
-        assertThat(marsRover, is(aMarsRoverUnderstandingNasaCommands().at(8,4).pointing("S").build()));
-    }
-
-    @Test
     public void ignores_unknown_commands() {
         MarsRover marsRover = aMarsRoverUnderstandingNasaCommands().at(7,4).pointing("E").build();
 
