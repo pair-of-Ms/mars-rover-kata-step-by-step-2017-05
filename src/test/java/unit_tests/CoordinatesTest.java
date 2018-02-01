@@ -24,6 +24,4 @@ public class CoordinatesTest {
         MatcherAssert.assertThat(coordinates.incrementY(1), is(new Coordinates(1, 2)));
         MatcherAssert.assertThat(coordinates.incrementY(-2), is(new Coordinates(1, -1)));
     }
-
-
 }

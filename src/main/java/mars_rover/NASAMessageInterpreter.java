@@ -1,8 +1,5 @@
 package mars_rover;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class NASAMessageInterpreter extends MessageInterpreter {
 
     private static final int MOVEMENT_DELTA = 1;
