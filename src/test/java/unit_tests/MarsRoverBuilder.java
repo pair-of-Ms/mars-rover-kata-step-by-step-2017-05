@@ -23,6 +23,11 @@ public class MarsRoverBuilder {
         return aMarsRover().understandingNasaCommands();
     }
 
+    public static MarsRoverBuilder aMarsRoverAnywherePointingToAnyDirection()
+    {
+        return aMarsRoverUnderstandingNasaCommandsAtIrrelevantPosition().pointing("N");
+    }
+
     public MarsRoverBuilder at(int x, int y)
     {
         coordinates = new Coordinates(x, y);

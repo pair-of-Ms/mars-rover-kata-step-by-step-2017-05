@@ -5,26 +5,25 @@ import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static unit_tests.MarsRoverBuilder.aMarsRoverUnderstandingNasaCommands;
-import static unit_tests.MarsRoverBuilder.aMarsRoverUnderstandingNasaCommandsAtIrrelevantPosition;
+import static unit_tests.MarsRoverBuilder.aMarsRoverAnywherePointingToAnyDirection;
 
 public class ReceivingUselessCommandTest {
 
     @Test
     public void does_nothing_when_receiving_empty_commands_sequence() {
-        MarsRover marsRover = aMarsRoverUnderstandingNasaCommandsAtIrrelevantPosition().pointing("N").build();
+        MarsRover marsRover = aMarsRoverAnywherePointingToAnyDirection().build();
 
         marsRover.receive("");
 
-        assertThat(marsRover, is(aMarsRoverUnderstandingNasaCommandsAtIrrelevantPosition().pointing("N").build()));
+        assertThat(marsRover, is(aMarsRoverAnywherePointingToAnyDirection().build()));
     }
 
     @Test
     public void ignores_unknown_commands() {
-        MarsRover marsRover = aMarsRoverUnderstandingNasaCommands().at(7,4).pointing("E").build();
+        MarsRover marsRover = aMarsRoverAnywherePointingToAnyDirection().build();
 
         marsRover.receive("*");
 
-        assertThat(marsRover, is(aMarsRoverUnderstandingNasaCommands().at(7,4).pointing("E").build()));
+        assertThat(marsRover, is(aMarsRoverAnywherePointingToAnyDirection().build()));
     }
 }
