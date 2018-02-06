@@ -10,7 +10,7 @@ public class MarsRover {
     }
 
     public MarsRover(Coordinates coordinates, String direction, MessageInterpreter interpreter) {
-        this.vector = new Vector(coordinates, Direction.parse(direction));
+        vector = new Vector(coordinates, Direction.parse(direction));
         messageInterpeter = interpreter;
     }
 
