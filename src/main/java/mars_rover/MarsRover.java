@@ -1,7 +1,5 @@
 package mars_rover;
 
-import java.util.List;
-
 public class MarsRover {
 
     private final MessageInterpreter messageInterpeter;
@@ -20,13 +18,11 @@ public class MarsRover {
         execute(createCommands(message));
     }
 
-    private void execute(List<Command> commands) {
-        for(Command command:commands) {
-            vector = command.execute(vector);
-        }
+    private void execute(Commands commands) {
+        vector = commands.execute(vector);
     }
 
-    private List<Command> createCommands(String message) {
+    private Commands createCommands(String message) {
         return messageInterpeter.createCommands(message);
     }
 
