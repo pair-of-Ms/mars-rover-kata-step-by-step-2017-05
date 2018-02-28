@@ -23,7 +23,7 @@ public class MarsRover {
     }
 
     private Commands createCommands(String message) {
-        return messageInterpeter.createCommands(message);
+        return messageInterpeter.interpret(message);
     }
 
     @Override

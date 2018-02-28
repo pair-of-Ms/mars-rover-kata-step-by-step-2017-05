@@ -11,7 +11,7 @@ public abstract class MessageInterpreter {
 
     protected abstract Command createCommand(String commandRepresentation);
 
-    public Commands createCommands(String message) {
+    public Commands interpret(String message) {
         List<Command> commands = new ArrayList<>();
         for(String commandRepresentation: parseMessage(message))
         {
