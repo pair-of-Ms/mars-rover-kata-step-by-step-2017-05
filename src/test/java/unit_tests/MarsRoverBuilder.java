@@ -1,6 +1,8 @@
 package unit_tests;
 
 import mars_rover.*;
+import mars_rover.messages_interpreter.ESAMessageInterpreter;
+import mars_rover.messages_interpreter.NASAMessageInterpreter;
 
 public class MarsRoverBuilder {
 

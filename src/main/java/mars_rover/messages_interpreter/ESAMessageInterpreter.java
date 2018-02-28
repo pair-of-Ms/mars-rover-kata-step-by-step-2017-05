@@ -1,18 +1,20 @@
-package mars_rover;
+package mars_rover.messages_interpreter;
 
-public class NASAMessageInterpreter extends MessageInterpreter {
+import mars_rover.*;
+
+public class ESAMessageInterpreter extends MessageInterpreter {
 
     private static final int MOVEMENT_DELTA = 1;
 
     protected Command createCommand(String commandRepresentation) {
 
-        if (commandRepresentation.equals("r")) {
+        if (commandRepresentation.equals("d")) {
             return new TurningRight();
-        } else if (commandRepresentation.equals("l")) {
+        } else if (commandRepresentation.equals("i")) {
             return new TurningLeft();
-        } else if (commandRepresentation.equals("f")) {
+        } else if (commandRepresentation.equals("a")) {
             return new MovingForward(MOVEMENT_DELTA);
-        } else if (commandRepresentation.equals("b")){
+        } else if (commandRepresentation.equals("r")){
             return new MovingBackwards(MOVEMENT_DELTA);
         } else {
             return new UnknownCommand();

@@ -1,5 +1,8 @@
 package mars_rover;
 
+import mars_rover.messages_interpreter.Command;
+import mars_rover.messages_interpreter.Commands;
+
 import java.util.ArrayList;
 import java.util.List;
 

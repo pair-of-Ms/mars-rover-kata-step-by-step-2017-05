@@ -1,4 +1,6 @@
-package mars_rover;
+package mars_rover.messages_interpreter;
+
+import mars_rover.Vector;
 
 import java.util.List;
 

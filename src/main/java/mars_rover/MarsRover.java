@@ -1,5 +1,8 @@
 package mars_rover;
 
+import mars_rover.messages_interpreter.Commands;
+import mars_rover.messages_interpreter.NASAMessageInterpreter;
+
 public class MarsRover {
 
     private final MessageInterpreter messageInterpeter;
