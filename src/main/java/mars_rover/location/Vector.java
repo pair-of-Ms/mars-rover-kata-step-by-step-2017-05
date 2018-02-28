@@ -1,4 +1,4 @@
-package mars_rover;
+package mars_rover.location;
 
 public class Vector {
 
@@ -46,7 +46,7 @@ public class Vector {
 
     @Override
     public String toString() {
-        return "mars_rover.Vector{" +
+        return "mars_rover.location.Vector{" +
                 "coordinates=" + coordinates +
                 ", direction=" + direction +
                 '}';

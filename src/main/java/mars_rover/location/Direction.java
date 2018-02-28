@@ -1,4 +1,4 @@
-package mars_rover;
+package mars_rover.location;
 
 public enum Direction {
     North {

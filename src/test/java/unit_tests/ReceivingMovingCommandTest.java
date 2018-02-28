@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static unit_tests.MarsRoverBuilder.aMarsRoverUnderstandingNasaCommands;
+import static mars_rover.message_interpreters.MarsRoverBuilder.aMarsRoverUnderstandingNasaCommands;
 
 public class ReceivingMovingCommandTest {
 

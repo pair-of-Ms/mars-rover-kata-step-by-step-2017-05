@@ -1,18 +1,19 @@
-package mars_rover.messages_interpreter;
+package mars_rover;
 
-import mars_rover.Vector;
+import mars_rover.location.Vector;
+import mars_rover.message_interpreters.command_types.Command;
 
 import java.util.List;
 
-public class Commands {
+class Commands {
 
     private List<Command> commands;
 
-    public Commands(List<Command> commands) {
+    Commands(List<Command> commands) {
         this.commands = commands;
     }
 
-    public Vector execute(Vector vector) {
+    Vector execute(Vector vector) {
         for(Command command: commands) {
             vector = command.execute(vector);
         }

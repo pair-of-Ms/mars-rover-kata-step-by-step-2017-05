@@ -1,8 +1,9 @@
-package mars_rover.messages_interpreter;
+package mars_rover.message_interpreters;
 
 import mars_rover.*;
+import mars_rover.message_interpreters.command_types.*;
 
-public class NASAMessageInterpreter extends MessageInterpreter {
+class NASAMessageInterpreter extends MessageInterpreter {
 
     private static final int MOVEMENT_DELTA = 1;
 

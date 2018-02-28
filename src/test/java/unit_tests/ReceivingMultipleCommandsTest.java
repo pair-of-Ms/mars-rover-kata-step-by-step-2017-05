@@ -1,12 +1,11 @@
 package unit_tests;
 
-import mars_rover.*;
-import org.junit.Ignore;
+import mars_rover.MarsRover;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static unit_tests.MarsRoverBuilder.aMarsRover;
+import static mars_rover.message_interpreters.MarsRoverBuilder.aMarsRover;
 
 public class ReceivingMultipleCommandsTest {
 

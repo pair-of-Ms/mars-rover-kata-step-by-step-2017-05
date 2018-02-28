@@ -1,6 +1,8 @@
 package mars_rover;
 
-import mars_rover.messages_interpreter.Commands;
+import mars_rover.location.Coordinates;
+import mars_rover.location.Direction;
+import mars_rover.location.Vector;
 
 public class MarsRover {
 

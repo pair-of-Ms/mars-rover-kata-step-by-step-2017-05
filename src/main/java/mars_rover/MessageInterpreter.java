@@ -1,7 +1,6 @@
 package mars_rover;
 
-import mars_rover.messages_interpreter.Command;
-import mars_rover.messages_interpreter.Commands;
+import mars_rover.message_interpreters.command_types.Command;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +13,7 @@ public abstract class MessageInterpreter {
 
     protected abstract Command createCommand(String commandRepresentation);
 
-    public Commands interpret(String message) {
+    Commands interpret(String message) {
         List<Command> commands = new ArrayList<>();
         for(String commandRepresentation: parseMessage(message))
         {
